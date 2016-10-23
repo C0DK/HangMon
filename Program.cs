@@ -42,7 +42,9 @@ namespace HangMon
 		static bool WantToPlayAgain()
 		{
 			Console.WriteLine("Want to play again? [y]");
-			return Console.ReadLine().ToLower()[0] == 'y';
+			var ans = Console.ReadLine().ToLower();
+			if(ans.Length < 1) return true;
+			return ans[0] == 'y';
 		}
 	}
 }
